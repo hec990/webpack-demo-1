@@ -14,6 +14,14 @@ module.exports = {
                     {loader: "style-loader"},
                     {loader: "css-loader"}
                 ]
+            },
+            {
+                test: /\.less$/,  // 匹配所有以 .less 后缀结尾的文件
+                use: [
+                    {loader: "style-loader"},
+                    {loader: "css-loader"},
+                    {loader: "less-loader"}
+                ]
             }
         ]
     }
