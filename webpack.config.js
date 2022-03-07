@@ -1,4 +1,6 @@
 const path = require("path");
+const {VueLoaderPlugin} = require("vue-loader/dist/index")    
+
 
 module.exports = {
     entry: "./src/main.js", // 指定入口文件
@@ -33,7 +35,14 @@ module.exports = {
                   // 将 Sass 编译成 CSS
                   'sass-loader',
                 ],
+              },
+              {
+                  test: /\.vue$/,
+                  loader: "vue-loader"
               }
         ]
-    }
+    },
+    plugins: [
+        new VueLoaderPlugin()
+    ]
 }
